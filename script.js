@@ -27,7 +27,10 @@ let adaptive = true;
 title = prompt('Как называется ваш проект?');
 console.log(title);
 
-screens = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
+screens = prompt(
+  'Какие типы экранов нужно разработать?',
+  'Простые, Сложные, Интерактивные'
+);
 console.log(screens);
 
 screenPrice = +prompt('Сколько будет стоить данная работа?');
@@ -38,17 +41,17 @@ console.log(adaptive);
 
 let service1 = prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice1 = +prompt('Сколько это будет стоить?');
-console.log(service1,servicePrice1);
+console.log(service1, servicePrice1);
 
 let service2 = prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice2 = +prompt('Сколько это будет стоить?');
-console.log(service2,servicePrice2);
+console.log(service2, servicePrice2);
 
 fullPrice = screenPrice + servicePrice1 + servicePrice2;
 console.log(fullPrice);
 
-let servicePercentPrice = fullPrice - (fullPrice * (rollback/100));
-console.log(servicePercentPrice);
+let servicePercentPrice = fullPrice - fullPrice * (rollback / 100);
+console.log(Math.ceil(servicePercentPrice));
 
 if (fullPrice >= 30000) {
   console.log('Даем скидку в 10%');

@@ -1,5 +1,19 @@
 'use strict';
 
+const title = document.getElementsByTagName('h1')[0].textContent;
+const btn = document.getElementsByClassName('handler_btn');
+const screenBtn = document.querySelector('.screen-btn');
+const percent = document.querySelectorAll('.other-items.percent');
+const number = document.querySelectorAll('.other-items.number');
+const range = document.querySelector('.rollback > div > input');
+const rangeValue = document.querySelector('.rollback > div > .range-value');
+const servicePrice = document.getElementsByClassName('total-input')[0];
+const numberScreens = document.getElementsByClassName('total-input')[1];
+const allServicePrices = document.getElementsByClassName('total-input')[2];
+const fullPrice = document.getElementsByClassName('total-input')[3];
+const rollback = document.getElementsByClassName('total-input')[4];
+let screen = document.querySelectorAll('.screen');
+
 const appData = {
   title: '',
   screens: [],
@@ -103,11 +117,6 @@ const appData = {
     appData.logger();
   },
   logger: function () {
-    // for (const key in appData) {
-    //   if (Object.prototype.hasOwnProperty.call(appData, key)) {
-    //     console.log(appData[key]);
-    //   }
-    // }
     console.log('Полная цена', appData.fullPrice);
     console.log('Цена экранов', appData.screenPrice);
     console.log('Цена всех сервисов', appData.allServicePrices);

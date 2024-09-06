@@ -77,8 +77,8 @@ const appData = {
       appData.addServices();
       appData.addPrices();
       appData.showResult();
-      startBtn.style = 'display: none';
-      resetBtn.style = 'display: block';
+      startBtn.style.display = 'none';
+      resetBtn.style.display = 'block';
     }
   },
   reset: function () {
@@ -103,9 +103,9 @@ const appData = {
 
     let screens = document.querySelectorAll('.screen');
 
-    startBtn.style = 'display: block';
-    resetBtn.style = 'display: none';
-    cmsVariants.style = 'display: none';
+    startBtn.style.display = '';
+    resetBtn.style.display = 'none';
+    cmsVariants.style.display = 'none';
     cmsCheck.checked = false
 
     screens.forEach((item, index) => {
@@ -167,14 +167,14 @@ const appData = {
     });
 
     if (cmsCheck.checked) {
-      cmsVariants.style = 'display: flex';
+      cmsVariants.style.display = 'flex';
     }
 
     cmsSelect.addEventListener('change', () => {
       const selectedOptions = cmsSelect.options[cmsSelect.selectedIndex];
       console.log(selectedOptions.value);
       if (selectedOptions.value === 'other') {
-        cmsOtherVariants.style = 'display: block';
+        cmsOtherVariants.styledisplay = 'block';
       } else if (selectedOptions.value === '50') {
         const full = appData.fullPrice + appData.fullPrice * 0.5;
         fullPrice.value = full;
